@@ -33,22 +33,6 @@ const Dashboard = () => {
                 </button>
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/dashboard/my-donation-request">
-                <button className="w-full flex items-center">
-                  <BiSolidDonateBlood className="mr-2"></BiSolidDonateBlood>My
-                  Donation Request
-                </button>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/create-donation-request">
-                <button className="w-full flex items-center">
-                  <IoIosCreate className="mr-2"></IoIosCreate>Create Donation
-                  Request
-                </button>
-              </NavLink>
-            </li>
           </>
 
           <span>
@@ -95,27 +79,11 @@ const Dashboard = () => {
               </button>
             </NavLink>
           </li>
-          <li className="md:ml-8 text-xl md:my-0 mb-3">
-            <NavLink to="/dashboard/my-donation-request">
-              <button className="w-64 md:w-full flex items-center">
-                <BiSolidDonateBlood className="mr-2"></BiSolidDonateBlood>My
-                Donation Request
-              </button>
-            </NavLink>
-          </li>
-          <li className="md:ml-8 text-xl md:my-0 mb-3">
-            <NavLink to="/dashboard/create-donation-request">
-              <button className="w-64 md:w-full flex items-center">
-                <IoIosCreate className="mr-2"></IoIosCreate>Create Donation
-                Request
-              </button>
-            </NavLink>
-          </li>
         </ul>
       </div>
 
       {/* dashboard content */}
-      <div className="flex-1 py-10 md:p-10  overflow-x-auto">
+      <div className="flex-1 py-10 md:p-10  overflow-x-auto px-6">
         <Outlet></Outlet>
       </div>
     </div>

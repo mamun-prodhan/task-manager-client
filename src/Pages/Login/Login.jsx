@@ -97,7 +97,7 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
           </div>
         </form>
-        <div className="mt-3">
+        {/* <div className="mt-3">
           <button
             onClick={handleGoogleSignIn}
             className="btn btn-primary w-full"
@@ -105,7 +105,7 @@ const Login = () => {
             <FaGoogle></FaGoogle>
             <span>Login with Google </span>
           </button>
-        </div>
+        </div> */}
         <p className="font-bold py-4">
           Dont have an account ? Please
           <Link to="/register" className="text-[#FF6251] ms-2">

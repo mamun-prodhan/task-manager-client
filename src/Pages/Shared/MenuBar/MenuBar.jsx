@@ -30,7 +30,7 @@ const MenuBar = () => {
           Home
         </NavLink>
       </li>
-      <li className="md:ml-2 text-xl md:my-0 mb-7">
+      {/* <li className="md:ml-2 text-xl md:my-0 mb-7">
         <NavLink
           to="/blog"
           className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
@@ -45,13 +45,13 @@ const MenuBar = () => {
         >
           About
         </NavLink>
-      </li>
+      </li> */}
 
       {user?.email && (
         <>
           <li className="md:ml-2 text-xl md:my-0 mb-7">
             <NavLink
-              to="/dashboard"
+              to="/dashboard/user-home"
               className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
             >
               Dashboard
