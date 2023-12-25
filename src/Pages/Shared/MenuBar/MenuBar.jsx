@@ -1,8 +1,23 @@
 import { NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const MenuBar = () => {
-  const user = {
-    email: "mamunpr6@gmail.com",
+  const { user, logOut } = useAuth();
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        console.log("Logout successfully");
+        Swal.fire({
+          title: "Successfull",
+          text: "Logout successfully",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   let navLinks = (
@@ -31,34 +46,51 @@ const MenuBar = () => {
           About
         </NavLink>
       </li>
-      <li className="md:ml-2 text-xl md:my-0 mb-7">
-        {user.email && (
-          <NavLink
-            to="/dashboard"
-            className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
-          >
-            Dashboard
-          </NavLink>
-        )}
-      </li>
-      <li className="md:ml-2 text-xl md:my-0 mb-7">
-        <NavLink
-          to="/login"
-          className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
-        >
-          Login
-        </NavLink>
-      </li>
-      <li className="md:ml-2 text-xl md:my-0 mb-7">
-        <NavLink
-          to="/register"
-          className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
-        >
-          Register
-        </NavLink>
-      </li>
+
+      {user?.email && (
+        <>
+          <li className="md:ml-2 text-xl md:my-0 mb-7">
+            <NavLink
+              to="/dashboard"
+              className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
+            >
+              Dashboard
+            </NavLink>
+          </li>
+          <li className="md:ml-2 text-xl md:my-0 mb-7">
+            <button
+              onClick={handleSignOut}
+              className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
+            >
+              Logout
+            </button>
+          </li>
+        </>
+      )}
+
+      {!user?.email && (
+        <>
+          <li className="md:ml-2 text-xl md:my-0 mb-7">
+            <NavLink
+              to="/login"
+              className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
+            >
+              Login
+            </NavLink>
+          </li>
+          <li className="md:ml-2 text-xl md:my-0 mb-7">
+            <NavLink
+              to="/register"
+              className="text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 duration-500"
+            >
+              Register
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
+
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
