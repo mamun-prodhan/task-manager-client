@@ -6,20 +6,16 @@ const Home = () => {
       className="hero min-h-screen"
       style={{
         backgroundImage:
-          "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+          "url(https://i0.wp.com/getflowdotcom.wpcomstaging.com/wp-content/uploads/2020/06/task-management-workflow.jpg?fit=2000%2C1500&ssl=1)",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-          <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
           <Link to="/login">
-            <button className="btn btn-primary">Lets Explore</button>
+            <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary">
+              Lets Explore
+            </button>
           </Link>
         </div>
       </div>
